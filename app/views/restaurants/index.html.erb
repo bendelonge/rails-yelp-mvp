@@ -1,10 +1,38 @@
-<h1>Restaurants</h1>
+<div class="container">
+  <div class="navbar">
+    <h2>Restaurants</h2>
+  </div>
 
-<ul>
-  <% @restaurants.each do |restaurant| %>
-  <li>
-    <%= link_to restaurant.name, restaurant_path(restaurant)%>
-  </li>
+
+  <div class="restaurants">
+    <% @restaurants.each do |restaurant| %>
+      <div class="restaurant-card">
+        <div class="restaurant-name">
+            <h4><%= link_to restaurant.name, restaurant_path(restaurant)%></h4>
+          </div>
+          <div class="restaurant-rates">
+            <h2 class="bold padding-bottom-7"><%= restaurant.average_rating %><small>/ 5</small></h2>
+            <% restaurant.average_rating.round.times do %>
+              <button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+            <% end %>
+            <% (5 - restaurant.average_rating.round).times do %>
+              <button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+                <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+              </button>
+            <% end %>
+          </div>
+      </div>
     <%end  %>
-    <%= link_to 'New Restaurant', new_restaurant_path%>
-</ul>
+    <div class="text-center">
+      <%= link_to 'New Restaurant', new_restaurant_path, class: "btn btn-primary"%>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+

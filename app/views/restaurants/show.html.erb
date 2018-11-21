@@ -8,5 +8,7 @@
   <p><%=  review.rating %></p>
 <% end %>
 
+<h2>average : <%= @restaurant.average_rating %></h2>
+
 <%= link_to 'add a review', new_restaurant_review_path(@restaurant) %>
 <%= link_to 'view all restaurants', restaurants_path %>

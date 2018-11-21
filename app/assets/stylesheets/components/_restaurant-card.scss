@@ -1,0 +1,23 @@
+.restaurant-card {
+  border: 1px solid light-gray;
+  border-radius: 3px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-card:hover {
+  box-shadow: 2px 2px 1px gray;
+}
+
+.restaurant-card a {
+  text-decoration: none;
+}
+
+.restaurant-rates h2 {
+  font-size: 25px;
+  margin-top: 0;
+}
